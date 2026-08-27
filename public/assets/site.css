@@ -9,7 +9,7 @@
   --accent: #F8B500;
   --accent-ink: #17191C;
   --accent-soft: #FFF6E0;
-  --accent-link: #B07800;
+  --accent-link: #8F6100;
   --border: #E1E4E8;
   --radius: 14px;
   --radius-sm: 9px;
@@ -188,6 +188,10 @@ p { margin: 0 0 1.15em; }
 .prose > :first-child { margin-top: 0; }
 .prose a { color: var(--accent-link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 .prose a:hover { text-decoration-thickness: 2px; }
+/* buttons live inside .prose too - keep their own colours, .prose a must not win */
+.prose a.btn { color: var(--accent-ink); text-decoration: none; }
+.prose a.btn-ghost { color: var(--heading); }
+.prose a.btn:hover { text-decoration: none; }
 .prose ul, .prose ol { margin: 0 0 1.25em; padding-left: 1.35em; }
 .prose li { margin-bottom: .45em; }
 .prose li::marker { color: var(--accent); }
@@ -364,7 +368,7 @@ p { margin: 0 0 1.15em; }
 .disclosure {
   background: var(--accent-soft); border: 1px solid var(--border); border-left: 3px solid var(--accent);
   border-radius: var(--radius-sm); padding: .85rem 1.05rem; font-size: .84rem;
-  color: var(--muted); margin: 0 0 2rem;
+  color: var(--text); margin: 0 0 2rem;
 }
 
 /* business listing */
