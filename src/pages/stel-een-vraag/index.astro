@@ -1,12 +1,13 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-const html = "<p>Ben je het antwoord op je vraag nog niet tegen gekomen? Dan kun je hier makkelijk en snel je vraag insturen. We zullen zo snel mogelijk met een antwoord komen.</p>";
+const html = "<p>Ben je het antwoord op je vraag nog niet tegen gekomen? Dan kun je hier makkelijk en snel je vraag insturen. We zullen zo snel mogelijk met een antwoord komen.</p><form class=\"form\" action=\"https://api.web3forms.com/submit\" method=\"POST\" data-contact-form>\n<input type=\"hidden\" name=\"access_key\" value=\"281f477d-7744-407d-9b6a-9b8d9c6abe3c\" />\n<input type=\"hidden\" name=\"subject\" value=\"Nieuw bericht via helpikbengeenklusser.nl\" />\n<input type=\"hidden\" name=\"from_name\" value=\"HelpIkBenGeenKlusser\" />\n<label class=\"hp\" aria-hidden=\"true\">Bot<input type=\"checkbox\" name=\"botcheck\" tabindex=\"-1\" autocomplete=\"off\" /></label>\n<h2 style=\"margin-top:0\">Stuur ons een bericht</h2>\n<div class=\"form-row form-2\">\n<div class=\"field\">\n<label for=\"cf-name\">Naam <span class=\"req\" aria-hidden=\"true\">*</span></label>\n<input id=\"cf-name\" name=\"name\" type=\"text\" required autocomplete=\"name\" placeholder=\"Je naam\" />\n</div>\n<div class=\"field\">\n<label for=\"cf-email\">E-mailadres <span class=\"req\" aria-hidden=\"true\">*</span></label>\n<input id=\"cf-email\" name=\"email\" type=\"email\" required autocomplete=\"email\" placeholder=\"jij@voorbeeld.nl\" />\n</div>\n</div>\n<div class=\"field\">\n<label for=\"cf-message\">Bericht <span class=\"req\" aria-hidden=\"true\">*</span></label>\n<textarea id=\"cf-message\" name=\"message\" rows=\"6\" required placeholder=\"Waar kunnen we je mee helpen?\"></textarea>\n</div>\n<button class=\"btn\" type=\"submit\" data-send=\"Versturen\" data-sending=\"Bezig met versturen...\">Versturen</button>\n<p class=\"form-status\" role=\"status\" aria-live=\"polite\"></p>\n<p class=\"form-note\">We gebruiken je gegevens alleen om je bericht te beantwoorden.</p>\n</form>";
 const faq = [];
 ---
 <PageLayout
   title={"Stel je Vraag - Helpikbengeenklusser.nl"}
   description={"Hier kun je gemakkelijk en snel je vraag stellen wanneer je deze nog niet op onze website hebt kunnen vinden."}
   h1={"Stel een Vraag"}
+  noindex={false}
   faq={faq}
   crumb={[{ label: "Home", href: "/" }]}
 >

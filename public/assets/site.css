@@ -390,6 +390,42 @@ p { margin: 0 0 1.15em; }
 .store-facts a:hover { text-decoration: underline; }
 @media (min-width: 640px) { .store-card { grid-template-columns: 220px 1fr; gap: 1.9rem; } }
 
+/* ---------------- contact form ---------------- */
+.form {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: clamp(1.25rem, 1rem + 1.5vw, 2rem); margin: 2rem 0 0; max-width: 640px;
+  box-shadow: var(--shadow-sm);
+}
+.form-row { display: grid; gap: 1.1rem; }
+@media (min-width: 620px) { .form-row.form-2 { grid-template-columns: 1fr 1fr; } }
+.field { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.1rem; }
+.field label {
+  font-size: .8rem; font-weight: 700; color: var(--heading);
+  letter-spacing: .02em; font-family: var(--font-heading);
+}
+.field .req { color: var(--accent); }
+.field input, .field textarea {
+  font: inherit; font-size: .95rem; color: var(--heading); background: var(--bg);
+  border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .7rem .85rem;
+  width: 100%; transition: border-color .16s var(--ease), box-shadow .16s var(--ease);
+}
+.field textarea { resize: vertical; min-height: 140px; }
+.field input::placeholder, .field textarea::placeholder { color: var(--muted); opacity: .8; }
+.field input:focus, .field textarea:focus {
+  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px #F8B50055;
+}
+.field input:user-invalid, .field textarea:user-invalid { border-color: #e5484d; }
+.hp {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+.form button[type="submit"] { border: 0; cursor: pointer; font-family: inherit; }
+.form button[disabled] { opacity: .6; cursor: progress; }
+.form-status { margin: 1rem 0 0; font-size: .9rem; font-weight: 600; min-height: 1.4em; }
+.form-status.ok { color: var(--accent); }
+.form-status.err { color: #ff6b6e; }
+.form-note { font-size: .78rem; color: var(--muted); margin: .9rem 0 0; }
+
 /* ---------------- footer ---------------- */
 .site-footer {
   background: #F7F8F9; border-top: 1px solid var(--border);

@@ -4,8 +4,9 @@ export interface Props {
   description?: string;
   canonical?: string;
   faq?: { q: string; a: string }[];
+  noindex?: boolean;
 }
-const { title, description = "", canonical, faq = [] } = Astro.props;
+const { title, description = "", canonical, faq = [], noindex = false } = Astro.props;
 const site = "https://helpikbengeenklusser.nl";
 const url = canonical ?? new URL(Astro.url.pathname, site).href;
 const faqLd = faq.length
@@ -27,6 +28,7 @@ const faqLd = faq.length
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={url} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -185,6 +187,41 @@ const faqLd = faq.length
       bt?.addEventListener("click", () =>
         window.scrollTo({ top: 0, behavior: "smooth" })
       );
+
+      // contact form -> Web3Forms (progressive enhancement over a plain POST)
+      document.querySelectorAll("[data-contact-form]").forEach((form) => {
+        const status = form.querySelector(".form-status");
+        const btn = form.querySelector('button[type="submit"]');
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          if (!form.reportValidity()) return;
+          btn.disabled = true;
+          btn.textContent = btn.dataset.sending;
+          status.className = "form-status";
+          status.textContent = "";
+          try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              headers: { "Content-Type": "application/json", Accept: "application/json" },
+              body: JSON.stringify(Object.fromEntries(new FormData(form))),
+            });
+            const data = await res.json().catch(() => ({}));
+            if (res.ok && data.success) {
+              status.className = "form-status ok";
+              status.textContent = "Bedankt! Je bericht is verstuurd. We nemen zo snel mogelijk contact op.";
+              form.reset();
+            } else {
+              throw new Error(data.message || "failed");
+            }
+          } catch (err) {
+            status.className = "form-status err";
+            status.textContent = "Er ging iets mis bij het versturen. Probeer het later nog eens.";
+          } finally {
+            btn.disabled = false;
+            btn.textContent = btn.dataset.send;
+          }
+        });
+      });
 
       // reading progress (only where a progress bar is present)
       const pb = document.querySelector("[data-progress]");

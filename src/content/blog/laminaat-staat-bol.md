@@ -48,7 +48,4 @@ Als het laminaat echter sterk vervormd is, kan het zijn dat je het moet vervange
 
 ## Conclusie
 
-Bol laminaat kan vervelend zijn, maar gelukkig zijn er manieren om dit probleem te voorkomen en op te lossen. Zorg
- voor de juiste luchtvochtigheid in je huis en volg de juiste instructies bij het leggen van het laminaat. Als het
- laminaat al bol staat, probeer dan gewicht op de plek te plaatsen. Als het probleem blijft bestaan, kan het nodig
- zijn om het laminaat te vervangen. Voor meer informatie, bezoek [laminaat staat bol](https://woonstyletips.nl/laminaat-staat-bol/).
+Bol laminaat kan vervelend zijn, maar gelukkig zijn er manieren om dit probleem te voorkomen en op te lossen. Zorg voor de juiste luchtvochtigheid in je huis en volg de juiste instructies bij het leggen van het laminaat. Als het laminaat al bol staat, probeer dan gewicht op de plek te plaatsen. Als het probleem blijft bestaan, kan het nodig zijn om het laminaat te vervangen. Voor meer informatie, bezoek [laminaat staat bol](https://woonstyletips.nl/laminaat-staat-bol/).

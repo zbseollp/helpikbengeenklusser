@@ -1,12 +1,13 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">[zb_mp_title]</span></div><dl class=\"store-facts\"><div><dt>Adres</dt><dd>[zb_mp_website]</dd></div></dl></div>\n<p>[zb_mp_title] is een [zb_mp_categoryName] gelegen aan [zb_mp_street] in [zb_mp_city].</p>\n<h3 id=\"meer-informatie-over-zb-mp-title-in-zb-mp-city\">Meer informatie over [zb_mp_title] in [zb_mp_city]</h3>\n<p>[zb_mp_title] is een [zb_mp_categoryName] gelegen in [zb_mp_city] op [zb_mp_street].</p>\n<p>[zb_mp_title] in [zb_mp_city] is een grote [zb_mp_categoryName] met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een [zb_mp_categoryName] in de buurt van [zb_mp_city]? Dan ben je bij [zb_mp_title] op de juiste plek. Bij [zb_mp_title] kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met [zb_mp_title]door ze telefonisch te bereiken op: [zb_mp_phone] of bekijk de website door op de link hieronder te klikken.</p>\n<p>[[zb_mp_Website]]([zb_mp_Website])</p>\n<p>Wil je graag een prettige [zb_mp_categoryName]? Kom vandaag nog langs bij [zb_mp_title].</p>\n<p>Hoe kom je bij [zb_mp_title]? Open direct de <a href=\"http://[zb_mp_url]\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je [zb_mp_title] het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>";
+const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">in</span></div></div>\n<p>is een gelegen aan in.</p>\n<h3 id=\"meer-informatie-over-in\">Meer informatie over in</h3>\n<p>is een gelegen in op.</p>\n<p>in is een grote met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een in de buurt van? Dan ben je bij op de juiste plek. Bij kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met door ze telefonisch te bereiken op: of bekijk de website door op de link hieronder te klikken.</p>\n<p>[]()</p>\n<p>Wil je graag een prettige? Kom vandaag nog langs bij.</p>\n<p>Hoe kom je bij? Open direct de <a href=\"http://\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>";
 const faq = [];
 ---
 <PageLayout
-  title={"[zb_mp_title] | [zb_mp_categoryName] in [zb_mp_city]"}
-  description={"Op zoek naar een bouwwinkel? [zb_mp_title] is een grote bouwwinkel in [zb_mp_city]. [zb_mp_title] voor al je spullen die jij nodig hebt voor de verbouwing!"}
-  h1={"[zb_mp_title]"}
+  title={"in"}
+  description={"Op zoek naar een bouwwinkel? is een grote bouwwinkel in. voor al je spullen die jij nodig hebt voor de verbouwing!"}
+  h1={"in"}
+  noindex={true}
   faq={faq}
   crumb={[{ label: "Home", href: "/" }]}
 >
