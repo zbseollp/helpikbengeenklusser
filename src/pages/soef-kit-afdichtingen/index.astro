@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">Soef Kit &amp; Afdichtingen</span></div><dl class=\"store-facts\"><div><dt>Adres</dt><dd>A. Vondelingstraat 44</dd></div><div><dt>Telefoon</dt><dd><a href=\"tel:+31614539161\">+31 6 14539161</a></dd></div></dl></div>\n<p>Soef Kit &amp; Afdichtingen is een Bouwmarkt gelegen aan A. Vondelingstraat 44 in Almere.</p>\n<h3 id=\"meer-informatie-over-soef-kit-afdichtingen-in-almere\">Meer informatie over Soef Kit &amp; Afdichtingen in Almere</h3>\n<p>Soef Kit &amp; Afdichtingen is een Bouwmarkt gelegen in Almere op A. Vondelingstraat 44.</p>\n<p>Soef Kit &amp; Afdichtingen in Almere is een grote Bouwmarkt met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een Bouwmarkt in de buurt van Almere? Dan ben je bij Soef Kit &amp; Afdichtingen op de juiste plek. Bij Soef Kit &amp; Afdichtingen kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met Soef Kit &amp; Afdichtingendoor ze telefonisch te bereiken op: 31 6 14539161 of bekijk de website door op de link hieronder te klikken.</p>\n<p>Wil je graag een prettige Bouwmarkt? Kom vandaag nog langs bij Soef Kit &amp; Afdichtingen.</p>\n<p>Hoe kom je bij Soef Kit &amp; Afdichtingen? Open direct de <a href=\"https://www.google.com/maps/place/Soef+Kit+%26+Afdichtingen/@52.3793439,5.2136735,17z/data=!3m1!4b1!4m6!3m5!1s0x47c6172183eeffff:0x6630a49cf7649a12!8m2!3d52.3793439!4d5.2136735!16s%2Fg%2F11hyzydxjm?hl=nl\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je Soef Kit &amp; Afdichtingen het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<ol><li><a href=\"/bouwwinkel/\">Bouwwinkel</a></li><li>Soef Kit &amp; Afdichtingen</li></ol>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>\n<ul><li><a href=\"/gamma-bouwmarkt-breda/\">GAMMA bouwmarkt Breda</a></li><li><a href=\"/gamma-bouwmarkt-hengelo/\">GAMMA bouwmarkt Hengelo</a></li><li><a href=\"/hubo-bouwmarkt-van-hees-breda/\">Hubo bouwmarkt Van Hees Breda</a></li><li><a href=\"/karwei-bouwmarkt-bodegraven/\">Karwei bouwmarkt Bodegraven</a></li><li><a href=\"/pontmeyer-alkmaar/\">PontMeyer Alkmaar</a></li><li><a href=\"/pontmeyer-breda/\">PontMeyer Breda</a></li><li><a href=\"/pontmeyer-heerenveen/\">PontMeyer Heerenveen</a></li><li><a href=\"/v-o-f-hulshoff/\">V.O.F. Hulshoff</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"Soef Kit & Afdichtingen | Bouwmarkt in Almere"}
+  description={"Op zoek naar een bouwwinkel? Soef Kit & Afdichtingen is een grote bouwwinkel in Almere. Soef Kit & Afdichtingen voor al je spullen die jij nodig hebt voor de verbouwing!"}
+  h1={"Soef Kit & Afdichtingen"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

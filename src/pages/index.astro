@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
+const html = "<p>HelpIkBenGeenKlusser.nl helpt je met het beantwoorden van al jouw klusvragen. Onze experts zullen je altijd snel van een professioneel antwoord voorzien.</p>\n<h3 id=\"267\">267+</h3>\n<p>Vragen</p>\n<h3 id=\"198\">198+</h3>\n<p>Antwoorden</p>\n<h3 id=\"32\">32+</h3>\n<p>Experts</p>\n<img src=\"/img/791744366c84a1cb.png\" alt=\"\" loading=\"lazy\" />\n<h2 id=\"laatste-berichten\">Laatste berichten</h2>\n<ul class=\"link-list\"><li><a href=\"/handige-startgids-voor-iedereen-die-zelf-wil-klussen/\">Handige startgids voor iedereen die zelf wil klussen</a></li><li><a href=\"/mag-ik-zelf-een-airco-installeren/\">Mag ik zelf een airco installeren?</a></li><li><a href=\"/david-garrett-partner/\">David Garrett partner: wie is de violist zijn geliefde?</a></li><li><a href=\"/anna-enquist-partner/\">Anna Enquist partner: wat is er bekend</a></li><li><a href=\"/leeftijd-michel-vlap/\">Leeftijd Michel Vlap: Alles Wat Je Moet Weten</a></li><li><a href=\"/barbara-kozelj-kinderen/\">Barbara Kozelj kinderen: Wat bekend is over haar gezin</a></li><li><a href=\"/janke-dekker-leeftijd/\">Leeftijd Janke Dekker: Wat Is Bekend</a></li><li><a href=\"/claude-songfestival-leeftijd/\">Claude Songfestival Leeftijd: Hoe Oud Is Claude?</a></li></ul>\n<h2 id=\"veel-voorkomende-vragen\">Veel voorkomende vragen</h2>\n<p>Zie hier de vragen waar al eerder antwoorden op zijn gegeven. Misschien staat het antwoord waar je naar op zoek bent hier al tussen.</p>\n<h2 id=\"stel-zelf-je-vraag\">Stel zelf je vraag</h2>\n<p>Ben je het antwoord op je vraag nog niet tegengekomen? Dan kun je hieronder makkelijk zelf je vraag insturen.</p>\n<img src=\"/img/0e6ace5b51c00524.png\" alt=\"\" loading=\"lazy\" />\n<h2 id=\"zie-ook\">Zie ook</h2>\n<p><a href=\"https://volgersparadijs.nl/instagram-likes-kopen/\" target=\"_blank\" rel=\"nofollow noopener\">Betrouwbare Instagram likes</a></p>";
+---
+<BaseLayout title={"Antwoord op al je Klusvragen - Een Passend Antwoord Van Onze Experts"} description={"Zit je midden in een verhuizing of verbouwing? Stel dan hier al je vragen. Onze experts staan dag en nacht voor je klaar!"}>
+  <section class="hero">
+    <div class="wrap">
+      <h1>{"Tips voor het klussen"}</h1>
+      <p>{"Zit je midden in een verhuizing of verbouwing? Stel dan hier al je vragen. Onze experts staan dag en nacht voor je klaar!"}</p>
+      <div class="hero-actions">
+        <a class="btn" href="/stel-een-vraag/">Stel een vraag</a>
+        <a class="btn btn-ghost" href="/blog/">Blog</a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="prose"><Fragment set:html={html} /></div>
+    </div>
+  </section>
+  {posts.length > 0 && (
+    <section class="section" style="border-top:1px solid var(--border)">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Laatste artikelen</h2>
+          <p><a href="/blog/">Alle artikelen</a></p>
+        </div>
+        <div class="grid">
+          {posts.map((post) => (
+            <a class="card" href={`/${post.id}/`}>
+              <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>
+                {post.data.pubDate.toLocaleDateString("nl-NL", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </time>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

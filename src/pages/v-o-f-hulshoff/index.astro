@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">V.O.F. Hulshoff</span></div><dl class=\"store-facts\"><div><dt>Adres</dt><dd>Âlde Dyk 8</dd></div><div><dt>Telefoon</dt><dd><a href=\"tel:+31512331462\">+31 512 331 462</a></dd></div></dl></div>\n<p>V.O.F. Hulshoff is een Elektronicawinkel gelegen aan Âlde Dyk 8 in Kootstertille.</p>\n<h3 id=\"meer-informatie-over-v-o-f-hulshoff-in-kootstertille\">Meer informatie over V.O.F. Hulshoff in Kootstertille</h3>\n<p>V.O.F. Hulshoff is een Elektronicawinkel gelegen in Kootstertille op Âlde Dyk 8.</p>\n<p>V.O.F. Hulshoff in Kootstertille is een grote Elektronicawinkel met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een Elektronicawinkel in de buurt van Kootstertille? Dan ben je bij V.O.F. Hulshoff op de juiste plek. Bij V.O.F. Hulshoff kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met V.O.F. Hulshoffdoor ze telefonisch te bereiken op: 31 512 331 462 of bekijk de website door op de link hieronder te klikken.</p>\n<p>Wil je graag een prettige Elektronicawinkel? Kom vandaag nog langs bij V.O.F. Hulshoff.</p>\n<p>Hoe kom je bij V.O.F. Hulshoff? Open direct de <a href=\"https://www.google.com/maps/place/V.O.F.+Hulshoff/@53.212851,6.0934516,17z/data=!3m1!4b1!4m6!3m5!1s0x47c852ea721f3d71:0x529c69acc7f788c4!8m2!3d53.212851!4d6.0934516!16s%2Fg%2F1v830btn?hl=nl\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je V.O.F. Hulshoff het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<ol><li><a href=\"/bouwwinkel/\">Bouwwinkel</a></li><li>V.O.F. Hulshoff</li></ol>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>\n<ul><li><a href=\"/bauhaus-groningen/\">BAUHAUS Groningen</a></li><li><a href=\"/bmn-bouwmaterialen-coevorden/\">BMN Bouwmaterialen Coevorden</a></li><li><a href=\"/bmn-bouwmaterialen-emmen/\">BMN Bouwmaterialen Emmen</a></li><li><a href=\"/bouwcenter-concordia-heerenveen/\">Bouwcenter Concordia Heerenveen</a></li><li><a href=\"/bouwcenter-koolschijn/\">Bouwcenter Koolschijn</a></li><li><a href=\"/de-bouwwinkel/\">De Bouwwinkel</a></li><li><a href=\"/hornbach-best/\">HORNBACH Best</a></li><li><a href=\"/praxis-bouwmarkt-uithoorn/\">Praxis Bouwmarkt Uithoorn</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"V.O.F. Hulshoff | Elektronicawinkel in Kootstertille"}
+  description={"Op zoek naar een bouwwinkel? V.O.F. Hulshoff is een grote bouwwinkel in Kootstertille. V.O.F. Hulshoff voor al je spullen die jij nodig hebt voor de verbouwing!"}
+  h1={"V.O.F. Hulshoff"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

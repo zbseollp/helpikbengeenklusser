@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<p class=\"disclosure\">Deze pagina bevat affiliatelinks. Koop je via zo’n link, dan ontvangen wij een kleine vergoeding — voor jou verandert de prijs niet.</p><div class=\"product product-noimg\" id=\"product1\"><div class=\"product-body\"><h3><span class=\"rank rank-inline\">1</span>Omschrijving van [zb_mp_product]</h3><p>Met een gereedschapset haal jij alle tools in huis waar je een veelzijdigheid aan klusjes thuis kunt uitvoeren. Bekijk op deze pagina wat [zb_mp_product] precies inhoudt en of dit de gereedschapset is die jij nodig hebt. Lees de beschrijving en de specificaties om een goed beeld te krijgen. Bestel [zb_mp_product] eenvoudig online via de button “bekijk de prijs”.</p><p>Merk</p><p>[zb_mp_merk]</p><p>Type opbergsysteem</p><p>[zb_mp_type-opbergsysteem]</p><p>Inclusief gereedschap</p><p>[zb_mp_inclusief-gereedschap]</p><p>Type gereedschapset</p><p>[zb_mp_type-gereedschapset]</p><p>Type opbergkoffer</p><p>[zb_mp_type-opbergkoffer]</p><p>Wielen</p><p>[zb_mp_wielen]</p><p>Draagbaar</p><p>[zb_mp_draagbaar]</p><p>Vergrendeling</p><p>[zb_mp_vergrendeling]</p><p>Kleur</p><p>[zb_mp_kleur]</p><p>Materiaal</p><p>[zb_mp_materiaal]</p><p>Gewicht</p><p>[zb_mp_gewicht]</p><p>[zb_mp_description]</p><a class=\"btn\" href=\"http://[zb_mp_Link]\" target=\"_blank\" rel=\"nofollow noopener sponsored\">Bekijk de prijs</a></div></div>\n<h2 id=\"bekijk-ook-andere-gereedschapsets\">Bekijk ook andere gereedschapsets</h2>";
+const faq = [];
+---
+<PageLayout
+  title={"Gereedschapset | [zb_mp_product]"}
+  description={"Gereedschapset aanschaffen? Bekijk hier wat [zb_mp_product] allemaal voor je te bieden heeft."}
+  h1={"[zb_mp_product]"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

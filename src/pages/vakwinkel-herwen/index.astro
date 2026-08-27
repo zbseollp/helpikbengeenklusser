@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">Vakwinkel herwen</span></div><dl class=\"store-facts\"><div><dt>Adres</dt><dd>Nijverheidsdwarsstraat 2</dd></div><div><dt>Telefoon</dt><dd><a href=\"tel:+31316247699\">+31 316 247 699</a></dd></div></dl></div>\n<p>Vakwinkel herwen is een Bouwmarkt gelegen aan Nijverheidsdwarsstraat 2 in Herwen.</p>\n<h3 id=\"meer-informatie-over-vakwinkel-herwen-in-herwen\">Meer informatie over Vakwinkel herwen in Herwen</h3>\n<p>Vakwinkel herwen is een Bouwmarkt gelegen in Herwen op Nijverheidsdwarsstraat 2.</p>\n<p>Vakwinkel herwen in Herwen is een grote Bouwmarkt met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een Bouwmarkt in de buurt van Herwen? Dan ben je bij Vakwinkel herwen op de juiste plek. Bij Vakwinkel herwen kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met Vakwinkel herwendoor ze telefonisch te bereiken op: 31 316 247 699 of bekijk de website door op de link hieronder te klikken.</p>\n<p>Wil je graag een prettige Bouwmarkt? Kom vandaag nog langs bij Vakwinkel herwen.</p>\n<p>Hoe kom je bij Vakwinkel herwen? Open direct de <a href=\"https://www.google.com/maps/place/Vakwinkel+herwen/@51.8820293,6.0993981,17z/data=!3m1!4b1!4m6!3m5!1s0x47c79fcbb47bcf25:0x2a17a614cdbcce10!8m2!3d51.8820293!4d6.0993981!16s%2Fg%2F11h7s4jr7j?hl=nl\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je Vakwinkel herwen het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<ol><li><a href=\"/bouwwinkel/\">Bouwwinkel</a></li><li>Vakwinkel herwen</li></ol>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>\n<ul><li><a href=\"/bauhaus-groningen/\">BAUHAUS Groningen</a></li><li><a href=\"/bmn-bouwmaterialen-zeist/\">BMN Bouwmaterialen Zeist</a></li><li><a href=\"/bouwmaat-hilversum/\">Bouwmaat Hilversum</a></li><li><a href=\"/gamma-amsterdam-w-de-zwijgerlaan-compact/\">GAMMA Amsterdam-W de Zwijgerlaan Compact</a></li><li><a href=\"/hubo-bouwmarkt-oldenzaal/\">Hubo bouwmarkt Oldenzaal</a></li><li><a href=\"/karwei-bouwmarkt-groningen-west/\">Karwei bouwmarkt Groningen-West</a></li><li><a href=\"/karwei-bouwmarkt-venlo-tegelen/\">Karwei bouwmarkt Venlo-Tegelen</a></li><li><a href=\"/praxis-megastore/\">Praxis megastore</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"Vakwinkel herwen | Bouwmarkt in Herwen"}
+  description={"Op zoek naar een bouwwinkel? Vakwinkel herwen is een grote bouwwinkel in Herwen. Vakwinkel herwen voor al je spullen die jij nodig hebt voor de verbouwing!"}
+  h1={"Vakwinkel herwen"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

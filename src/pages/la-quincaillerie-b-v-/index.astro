@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">La Quincaillerie B.V.</span></div><dl class=\"store-facts\"><div><dt>Adres</dt><dd>Hinthamerstraat 184</dd></div><div><dt>Telefoon</dt><dd><a href=\"tel:+31736441300\">+31 73 644 1300</a></dd></div></dl></div>\n<p>La Quincaillerie B.V. is een Bouwmarkt gelegen aan Hinthamerstraat 184 in s-Hertogenbosch.</p>\n<h3 id=\"meer-informatie-over-la-quincaillerie-b-v-in-s-hertogenbosch\">Meer informatie over La Quincaillerie B.V. in s-Hertogenbosch</h3>\n<p>La Quincaillerie B.V. is een Bouwmarkt gelegen in s-Hertogenbosch op Hinthamerstraat 184.</p>\n<p>La Quincaillerie B.V. in s-Hertogenbosch is een grote Bouwmarkt met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een Bouwmarkt in de buurt van s-Hertogenbosch? Dan ben je bij La Quincaillerie B.V. op de juiste plek. Bij La Quincaillerie B.V. kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met La Quincaillerie B.V.door ze telefonisch te bereiken op: 31 73 644 1300 of bekijk de website door op de link hieronder te klikken.</p>\n<p>Wil je graag een prettige Bouwmarkt? Kom vandaag nog langs bij La Quincaillerie B.V..</p>\n<p>Hoe kom je bij La Quincaillerie B.V.? Open direct de <a href=\"https://www.google.com/maps/place/La+Quincaillerie+B.V./@51.6884078,5.3130284,17z/data=!3m1!4b1!4m6!3m5!1s0x47c6eef85b8cb6d9:0x4239f430fedc907c!8m2!3d51.6884078!4d5.3130284!16s%2Fg%2F11cn3vp12p?hl=nl\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je La Quincaillerie B.V. het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<ol><li><a href=\"/bouwwinkel/\">Bouwwinkel</a></li><li>La Quincaillerie B.V.</li></ol>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>\n<ul><li><a href=\"/bmn-den-haag-centrum/\">BMN Den Haag – Centrum</a></li><li><a href=\"/gamma-bouwmarkt-eersel/\">GAMMA bouwmarkt Eersel</a></li><li><a href=\"/grottendieck-naaldwijk/\">Grottendieck Naaldwijk</a></li><li><a href=\"/karwei-bouwmarkt-maassluis/\">Karwei bouwmarkt Maassluis</a></li><li><a href=\"/kluswijs-wassenaar/\">KlusWijs Wassenaar</a></li><li><a href=\"/na-tex-bouwgroothandel/\">Na-tex Bouwgroothandel</a></li><li><a href=\"/praxis-bouwmarkt-zevenaar/\">Praxis Bouwmarkt Zevenaar</a></li><li><a href=\"/toolstation-hoorn/\">Toolstation Hoorn</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"La Quincaillerie B.V. | Bouwmarkt in s-Hertogenbosch"}
+  description={"Op zoek naar een bouwwinkel? La Quincaillerie B.V. is een grote bouwwinkel in s-Hertogenbosch. La Quincaillerie B.V. voor al je spullen die jij nodig hebt voor de verbouwing!"}
+  h1={"La Quincaillerie B.V."}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

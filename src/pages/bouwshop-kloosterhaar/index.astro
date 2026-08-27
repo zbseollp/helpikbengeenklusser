@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">Bouwshop Kloosterhaar</span></div><dl class=\"store-facts\"><div><dt>Adres</dt><dd>Dorpsstraat 21</dd></div><div><dt>Telefoon</dt><dd><a href=\"tel:+31523241116\">+31 523 241 116</a></dd></div></dl></div>\n<p>Bouwshop Kloosterhaar is een Bouwmarkt gelegen aan Dorpsstraat 21 in Kloosterhaar.</p>\n<h3 id=\"meer-informatie-over-bouwshop-kloosterhaar-in-kloosterhaar\">Meer informatie over Bouwshop Kloosterhaar in Kloosterhaar</h3>\n<p>Bouwshop Kloosterhaar is een Bouwmarkt gelegen in Kloosterhaar op Dorpsstraat 21.</p>\n<p>Bouwshop Kloosterhaar in Kloosterhaar is een grote Bouwmarkt met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een Bouwmarkt in de buurt van Kloosterhaar? Dan ben je bij Bouwshop Kloosterhaar op de juiste plek. Bij Bouwshop Kloosterhaar kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met Bouwshop Kloosterhaardoor ze telefonisch te bereiken op: 31 523 241 116 of bekijk de website door op de link hieronder te klikken.</p>\n<p>Wil je graag een prettige Bouwmarkt? Kom vandaag nog langs bij Bouwshop Kloosterhaar.</p>\n<p>Hoe kom je bij Bouwshop Kloosterhaar? Open direct de <a href=\"https://www.google.com/maps/place/Bouwshop+Kloosterhaar/@52.4955728,6.6713336,17z/data=!3m1!4b1!4m6!3m5!1s0x47b80114eedec969:0x206041f30d706bff!8m2!3d52.4955728!4d6.6713336!16s%2Fg%2F11rk5dqj9v?hl=nl\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je Bouwshop Kloosterhaar het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<ol><li><a href=\"/bouwwinkel/\">Bouwwinkel</a></li><li>Bouwshop Kloosterhaar</li></ol>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>\n<ul><li><a href=\"/bouwcenter-logus-de-hoop-goes/\">Bouwcenter Logus-De Hoop Goes</a></li><li><a href=\"/bouwmarkt-egmond/\">Bouwmarkt Egmond</a></li><li><a href=\"/bouwmarkt-gebr-toonders-b-v-/\">Bouwmarkt Gebr. Toonders B.V.</a></li><li><a href=\"/gamma-bouwmarkt-dordrecht/\">GAMMA bouwmarkt Dordrecht</a></li><li><a href=\"/hsh-uw-partner-in-bouwmaterialen/\">HSH uw partner in bouwmaterialen</a></li><li><a href=\"/leys-roosendaal/\">Leys Roosendaal</a></li><li><a href=\"/soef-kit-afdichtingen/\">Soef Kit &amp; Afdichtingen</a></li><li><a href=\"/t-olde-bouwhuis/\">t Olde Bouwhuis</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"Bouwshop Kloosterhaar | Bouwmarkt in Kloosterhaar"}
+  description={"Op zoek naar een bouwwinkel? Bouwshop Kloosterhaar is een grote bouwwinkel in Kloosterhaar. Bouwshop Kloosterhaar voor al je spullen die jij nodig hebt voor de verbouwing!"}
+  h1={"Bouwshop Kloosterhaar"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

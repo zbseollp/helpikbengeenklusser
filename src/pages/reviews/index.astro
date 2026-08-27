@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<p>In de categorie reviews vind je de artikelen die grondig door ons onderworpen zijn aan een onderzoek om uiteindelijk een top 10 te verkrijgen. Denk aan een boorhamer, een gehoorbescherming, een klopboormachine, een schroevendraaier en nog veel meer. Bekijk al onze uitgebreide recensies over de artikelen onder categorie reviews.</p>\n<ul><li><a href=\"/beste-buitendouche/\">Beste buitendouche</a></li><li><a href=\"/beste-heggenschaar/\">Beste heggenschaar</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"Reviews - helpikbengeenklusser"}
+  description={"In de categorie reviews vind je de artikelen die grondig door ons onderworpen zijn aan een onderzoek om uiteindelijk een top 10 te verkrijgen. Denk aan een boorhamer, een gehoorbescherming, een klopboormachine, een schroevendraaier en nog veel meer. Bekijk al onze uitgebreide recensies over de artikelen onder categorie reviews."}
+  h1={"Reviews"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

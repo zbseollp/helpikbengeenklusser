@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<p>In de categorie veiligheid zijn er allerlei hulpmiddelen te krijgen voor de algemene veiligheid. Denk aan een afzetlint, een beveiligingscamera buiten, een brandblusser voor thuis, een gasaansteker, een leidingzoeker, een robotmaaier, een zaklamp en nog veel meer. Bezichtig al onze grondig uitgevoerde recensies over de artikelen onder de categorie veiligheid.</p>\n<ul><li><a href=\"/beste-beveiligingscamera-buiten/\">Beste beveiligingscamera buiten</a></li><li><a href=\"/beste-brandblusser/\">Beste brandblusser</a></li><li><a href=\"/beste-brandblusser-voor-thuis/\">Beste brandblusser voor thuis</a></li><li><a href=\"/beste-douchestoel/\">Beste douchestoel</a></li><li><a href=\"/beste-gehoorbescherming/\">Beste gehoorbescherming</a></li><li><a href=\"/beste-installatiedraad/\">Beste installatiedraad</a></li><li><a href=\"/beste-ip-camera-wifi/\">Beste ip camera wifi</a></li><li><a href=\"/beste-noppenfolie/\">Beste noppenfolie</a></li><li><a href=\"/beste-ontstoppingsveer/\">Beste ontstoppingsveer</a></li><li><a href=\"/beste-profielmal/\">Beste profielmal</a></li><li><a href=\"/beste-secondelijm/\">Beste secondelijm</a></li><li><a href=\"/beste-speciekuip/\">Beste speciekuip</a></li><li><a href=\"/beste-veiligheidsbril/\">Beste veiligheidsbril</a></li><li><a href=\"/beste-verlengsnoer/\">Beste verlengsnoer</a></li><li><a href=\"/beste-zaklamp/\">Beste zaklamp</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"Veiligheid - helpikbengeenklusser"}
+  description={"In de categorie veiligheid zijn er allerlei hulpmiddelen te krijgen voor de algemene veiligheid. Denk aan een afzetlint, een beveiligingscamera buiten, een brandblusser voor thuis, een gasaansteker, een leidingzoeker, een robotmaaier, een zaklamp en nog veel meer. Bezichtig al onze grondig uitgevoerde recensies over de artikelen onder de categorie veiligheid."}
+  h1={"Veiligheid"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

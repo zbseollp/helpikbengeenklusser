@@ -1,0 +1,27 @@
+---
+export const prerender = true;
+import { getCollection, render } from "astro:content";
+import BlogPostLayout from "../layouts/BlogPostLayout.astro";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const all = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const idx = all.findIndex((p) => p.id === entry.id);
+const related = Array.from({ length: 3 }, (_, i) => all[(idx + i + 1) % all.length]).filter(
+  (p) => p && p.id !== entry.id
+);
+---
+<BlogPostLayout entry={entry} related={related}>
+  <Content />
+</BlogPostLayout>

@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<p>Hier kun je alle vragen die op deze website worden besproken bekijken.</p>\n<h2 id=\"zit-je-met-een-vraag\">Zit je met een vraag?</h2>\n<p>Zit je zelf met een vraag? En je kunt het antwoord hierop nog niet vinden op onze website? Dan kun je hieronder zelf makkelijk en snel je vraag insturen.</p>\n<img src=\"/img/0e6ace5b51c00524.png\" alt=\"\" loading=\"lazy\" />";
+const faq = [];
+---
+<PageLayout
+  title={"Bekijk alle vragen - Helpikbengeenklusser.nl"}
+  description={"Bekijk hier alle vragen die al eerder op onze website zijn besproken. Je kunt hier ook makkelijk zelf je vraag stellen."}
+  h1={"Bekijk alle vragen"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

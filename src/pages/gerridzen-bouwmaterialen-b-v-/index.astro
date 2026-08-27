@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">Gerridzen Bouwmaterialen B.v.</span></div><dl class=\"store-facts\"><div><dt>Adres</dt><dd>Zomerweg 155</dd></div></dl></div>\n<p>Gerridzen Bouwmaterialen B.v. is een Bouwmarkt gelegen aan Zomerweg 155 in Enschede.</p>\n<h3 id=\"meer-informatie-over-gerridzen-bouwmaterialen-b-v-in-ensched\">Meer informatie over Gerridzen Bouwmaterialen B.v. in Enschede</h3>\n<p>Gerridzen Bouwmaterialen B.v. is een Bouwmarkt gelegen in Enschede op Zomerweg 155.</p>\n<p>Gerridzen Bouwmaterialen B.v. in Enschede is een grote Bouwmarkt met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een Bouwmarkt in de buurt van Enschede? Dan ben je bij Gerridzen Bouwmaterialen B.v. op de juiste plek. Bij Gerridzen Bouwmaterialen B.v. kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met Gerridzen Bouwmaterialen B.v.door ze telefonisch te bereiken op: of bekijk de website door op de link hieronder te klikken.</p>\n<p>Wil je graag een prettige Bouwmarkt? Kom vandaag nog langs bij Gerridzen Bouwmaterialen B.v..</p>\n<p>Hoe kom je bij Gerridzen Bouwmaterialen B.v.? Open direct de <a href=\"https://www.google.com/maps/place/Gerridzen+Bouwmaterialen+B.v./@52.2241168,6.944346,17z/data=!3m1!4b1!4m6!3m5!1s0x47b815cb215aaaab:0x62ea4f313fc841f!8m2!3d52.2241168!4d6.944346!16s%2Fg%2F11lgy3j2cq?hl=nl\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je Gerridzen Bouwmaterialen B.v. het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<ol><li><a href=\"/bouwwinkel/\">Bouwwinkel</a></li><li>Gerridzen Bouwmaterialen B.v.</li></ol>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>\n<ul><li><a href=\"/beekhuizen-hoekerd-bv/\">Beekhuizen-Hoekerd BV</a></li><li><a href=\"/bouwcenter-raijmakers/\">Bouwcenter Raijmakers</a></li><li><a href=\"/gamma-bouwmarkt-hoorn/\">GAMMA bouwmarkt Hoorn</a></li><li><a href=\"/hubo-bouwmarkt-bossenbroek-arnhem/\">Hubo bouwmarkt Bossenbroek Arnhem</a></li><li><a href=\"/kluswijs-grave/\">KlusWijs Grave</a></li><li><a href=\"/o-o-ijzerwaren/\">O&amp;O IJzerwaren</a></li><li><a href=\"/raab-karcher-zwolle/\">Raab Karcher Zwolle</a></li><li><a href=\"/van-beem-ijzerwaren-b-v-/\">Van Beem IJzerwaren B.V.</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"Gerridzen Bouwmaterialen B.v. | Bouwmarkt in Enschede"}
+  description={"Op zoek naar een bouwwinkel? Gerridzen Bouwmaterialen B.v. is een grote bouwwinkel in Enschede. Gerridzen Bouwmaterialen B.v. voor al je spullen die jij nodig hebt voor de verbouwing!"}
+  h1={"Gerridzen Bouwmaterialen B.v."}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

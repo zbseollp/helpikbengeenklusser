@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">De Bouwwinkel</span></div><dl class=\"store-facts\"><div><dt>Adres</dt><dd>Bovengroenewoudseweg 6</dd></div></dl></div>\n<p>De Bouwwinkel is een gelegen aan Bovengroenewoudseweg 6 in Bergen op Zoom.</p>\n<h3 id=\"meer-informatie-over-de-bouwwinkel-in-bergen-op-zoom\">Meer informatie over De Bouwwinkel in Bergen op Zoom</h3>\n<p>De Bouwwinkel is een gelegen in Bergen op Zoom op Bovengroenewoudseweg 6.</p>\n<p>De Bouwwinkel in Bergen op Zoom is een grote met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een in de buurt van Bergen op Zoom? Dan ben je bij De Bouwwinkel op de juiste plek. Bij De Bouwwinkel kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met De Bouwwinkeldoor ze telefonisch te bereiken op: of bekijk de website door op de link hieronder te klikken.</p>\n<p>Wil je graag een prettige ? Kom vandaag nog langs bij De Bouwwinkel.</p>\n<p>Hoe kom je bij De Bouwwinkel? Open direct de <a href=\"https://www.google.com/maps/place/Bouwwinkel/@51.5064424,4.2810276,17z/data=!3m1!4b1!4m2!3m1!1s0x47c46c96667cb2b9:0x19f1c85cfcefec08?hl=nl\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je De Bouwwinkel het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<ol><li><a href=\"/bouwwinkel/\">Bouwwinkel</a></li><li>De Bouwwinkel</li></ol>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>\n<ul><li><a href=\"/bouwmarkten-in-vlissingen/\">Bouwmarkten In Vlissingen</a></li><li><a href=\"/hornbach/\">HORNBACH</a></li><li><a href=\"/hamminga-bouw-en-tuinmarkt-bv/\">Hamminga Bouw- En Tuinmarkt BV</a></li><li><a href=\"/hubo-bouwmarkt-tholen/\">Hubo Bouwmarkt Tholen</a></li><li><a href=\"/hubo-bouwmarkt-baarle-nassau/\">Hubo bouwmarkt Baarle-Nassau</a></li><li><a href=\"/hubo-bouwmarkt-goor/\">Hubo bouwmarkt Goor</a></li><li><a href=\"/hubo-bouwmarkt-kapelle/\">Hubo bouwmarkt Kapelle</a></li><li><a href=\"/kluswijs-en-kw-wonen-haren/\">KlusWijs en KW Wonen Haren</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"De Bouwwinkel |  in Bergen op Zoom"}
+  description={"Op zoek naar een bouwwinkel? De Bouwwinkel is een grote bouwwinkel in Bergen op Zoom. De Bouwwinkel voor al je spullen die jij nodig hebt voor de verbouwing!"}
+  h1={"De Bouwwinkel"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

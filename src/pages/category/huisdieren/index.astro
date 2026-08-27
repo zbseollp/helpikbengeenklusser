@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const names = ["Huisdieren"];
+const posts = (await getCollection("blog"))
+  .filter((p) => (p.data.categories ?? []).some((c) => names.includes(c)))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<BaseLayout title={"Huisdieren Archives - helpikbengeenklusser"} description={""}>
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumb"><a href="/">Home</a><span> / </span><a href="/blog/">Blog</a></p>
+      <h1>{"Categorie: Huisdieren"}</h1>
+      {posts.length > 0 && <p>{posts.length} artikelen</p>}
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="grid">
+        {posts.map((post) => (
+          <a class="card" href={`/${post.id}/`}>
+            <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>
+              {post.data.pubDate.toLocaleDateString("nl-NL", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+            </time>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

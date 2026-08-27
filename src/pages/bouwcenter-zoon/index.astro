@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">Bouwcenter Zoon</span></div><dl class=\"store-facts\"><div><dt>Adres</dt><dd>Christiaan Huijgensweg 2</dd></div></dl></div>\n<p>Bouwcenter Zoon is een Bouwmarkt gelegen aan Christiaan Huijgensweg 2 in Alphen aan den Rijn.</p>\n<h3 id=\"meer-informatie-over-bouwcenter-zoon-in-alphen-aan-den-rijn\">Meer informatie over Bouwcenter Zoon in Alphen aan den Rijn</h3>\n<p>Bouwcenter Zoon is een Bouwmarkt gelegen in Alphen aan den Rijn op Christiaan Huijgensweg 2.</p>\n<p>Bouwcenter Zoon in Alphen aan den Rijn is een grote Bouwmarkt met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een Bouwmarkt in de buurt van Alphen aan den Rijn? Dan ben je bij Bouwcenter Zoon op de juiste plek. Bij Bouwcenter Zoon kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met Bouwcenter Zoondoor ze telefonisch te bereiken op: of bekijk de website door op de link hieronder te klikken.</p>\n<p>Wil je graag een prettige Bouwmarkt? Kom vandaag nog langs bij Bouwcenter Zoon.</p>\n<p>Hoe kom je bij Bouwcenter Zoon? Open direct de <a href=\"https://www.google.com/maps/place/Bouwcenter+Zoon/@52.128133,4.6429501,17z/data=!3m1!4b1!4m6!3m5!1s0x47c5dae9dc955555:0x58651e8ca2f98bb1!8m2!3d52.128133!4d4.6429501!16s%2Fg%2F11j00stktq?hl=nl\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je Bouwcenter Zoon het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<ol><li><a href=\"/bouwwinkel/\">Bouwwinkel</a></li><li>Bouwcenter Zoon</li></ol>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>\n<ul><li><a href=\"/bmn-bouwmaterialen-leeuwarden/\">BMN Bouwmaterialen Leeuwarden</a></li><li><a href=\"/bouwpartner-nieuw-leven-bv/\">BouwPartner Nieuw Leven BV</a></li><li><a href=\"/bouwcenter-concordia-hoogeveen/\">Bouwcenter Concordia Hoogeveen</a></li><li><a href=\"/hubo-bouwmarkt-kerkdriel/\">Hubo bouwmarkt Kerkdriel</a></li><li><a href=\"/karwei-bouwmarkt-hoofddorp/\">Karwei bouwmarkt Hoofddorp</a></li><li><a href=\"/pontmeyer-emmeloord/\">PontMeyer Emmeloord</a></li><li><a href=\"/sagro-bouwmarkt-soutlet-nl/\">Sagro Bouwmarkt – soutlet.nl</a></li><li><a href=\"/wanco-doe-het-zelf-b-v-/\">Wanco Doe Het Zelf B.V.</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"Bouwcenter Zoon | Bouwmarkt in Alphen aan den Rijn"}
+  description={"Op zoek naar een bouwwinkel? Bouwcenter Zoon is een grote bouwwinkel in Alphen aan den Rijn. Bouwcenter Zoon voor al je spullen die jij nodig hebt voor de verbouwing!"}
+  h1={"Bouwcenter Zoon"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

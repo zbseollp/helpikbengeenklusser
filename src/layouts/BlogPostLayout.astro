@@ -1,0 +1,48 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import type { CollectionEntry } from "astro:content";
+export interface Props { entry: CollectionEntry<"blog">; related?: CollectionEntry<"blog">[] }
+const { entry, related = [] } = Astro.props;
+const d = entry.data;
+---
+<BaseLayout title={d.title} description={d.description}>
+  <article>
+    <section class="hero">
+      <div class="wrap wrap-narrow">
+        <p class="crumb"><a href="/">Home</a><span> / </span><a href="/blog/">Blog</a></p>
+        <h1>{d.title}</h1>
+        {d.description && <p>{d.description}</p>}
+      </div>
+    </section>
+    <section class="section">
+      <div class="wrap wrap-narrow">
+        <p class="post-meta">
+          Gepubliceerd op{" "}
+          <time datetime={d.pubDate.toISOString().slice(0, 10)}>
+            {d.pubDate.toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" })}
+          </time>
+          {d.author && <span> &middot; {d.author}</span>}
+        </p>
+        <div class="prose"><slot /></div>
+      </div>
+    </section>
+  </article>
+  {related.length > 0 && (
+    <section class="section" style="border-top:1px solid var(--border)">
+      <div class="wrap">
+        <div class="section-head"><h2>Meer artikelen</h2></div>
+        <div class="grid">
+          {related.map((p) => (
+            <a class="card" href={`/${p.id}/`}>
+              <time datetime={p.data.pubDate.toISOString().slice(0, 10)}>
+                {p.data.pubDate.toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" })}
+              </time>
+              <h3>{p.data.title}</h3>
+              <p>{p.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

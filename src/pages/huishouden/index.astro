@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<p>In de categorie huishouden vind je alle handige artikelen voor vlot doen van de huishouding. Denk aan een elektrische boiler, een huishoudtrap, een robot ramenwasser, een stoomreiniger en nog veel meer. Bezichtig al onze grondig uitgevoerde reviews over de artikelen onder categorie huishouden.</p>\n<ul><li><a href=\"/beste-bezem/\">Beste bezem</a></li><li><a href=\"/beste-dweilrobot/\">Beste dweilrobot</a></li><li><a href=\"/beste-elektrische-boiler/\">Beste elektrische boiler</a></li><li><a href=\"/beste-huishoudtrap/\">Beste huishoudtrap</a></li><li><a href=\"/beste-inductie-beschermer/\">Beste inductie beschermer</a></li><li><a href=\"/beste-isolerende-raamfolie/\">Beste isolerende raamfolie</a></li><li><a href=\"/beste-kookplaat-met-afzuiging/\">Beste kookplaat met afzuiging</a></li><li><a href=\"/beste-kruimeldief/\">Beste kruimeldief</a></li><li><a href=\"/beste-robot-ramenwasser/\">Beste robot ramenwasser</a></li><li><a href=\"/beste-stoomreiniger/\">Beste stoomreiniger</a></li><li><a href=\"/beste-vloertrekker/\">Beste vloertrekker</a></li><li><a href=\"/beste-wasmachineverhoger/\">Beste wasmachineverhoger</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"Huishouden - helpikbengeenklusser"}
+  description={"In de categorie huishouden vind je alle handige artikelen voor vlot doen van de huishouding. Denk aan een elektrische boiler, een huishoudtrap, een robot ramenwasser, een stoomreiniger en nog veel meer. Bezichtig al onze grondig uitgevoerde reviews over de artikelen onder categorie huishouden."}
+  h1={"Huishouden"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

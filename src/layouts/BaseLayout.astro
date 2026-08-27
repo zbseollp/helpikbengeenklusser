@@ -1,0 +1,157 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  faq?: { q: string; a: string }[];
+}
+const { title, description = "", canonical, faq = [] } = Astro.props;
+const site = "https://helpikbengeenklusser.nl";
+const url = canonical ?? new URL(Astro.url.pathname, site).href;
+const faqLd = faq.length
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    }
+  : null;
+---
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={url} />
+    <meta property="og:site_name" content={"HelpIkBenGeenKlusser"} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="/assets/site.css" />
+    {faqLd && <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />}
+  </head>
+  <body>
+    <a class="skip" href="#main">Naar hoofdinhoud</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/" aria-label={"HelpIkBenGeenKlusser"}>
+          <img src="/logo.svg" alt={"HelpIkBenGeenKlusser"} width="197" height="36" />
+        </a>
+        <nav class="nav" aria-label="Hoofdmenu">
+          <a href="/"{...(Astro.url.pathname === "/" ? { "aria-current": "page" } : {})}>Home</a>
+      <a href="/klussen/"{...(Astro.url.pathname === "/klussen/" ? { "aria-current": "page" } : {})}>Klussen</a>
+      <a href="/reviews/"{...(Astro.url.pathname === "/reviews/" ? { "aria-current": "page" } : {})}>Doe het zelf</a>
+      <a href="/bouwwinkel/"{...(Astro.url.pathname === "/bouwwinkel/" ? { "aria-current": "page" } : {})}>Bouwwinkel</a>
+      <a href="/blog/"{...(Astro.url.pathname === "/blog/" ? { "aria-current": "page" } : {})}>Blog</a>
+      <a href="/vragen/"{...(Astro.url.pathname === "/vragen/" ? { "aria-current": "page" } : {})}>Vragen</a>
+      <a href="/over-ons/"{...(Astro.url.pathname === "/over-ons/" ? { "aria-current": "page" } : {})}>Over ons</a>
+        </nav>
+        <a class="btn-cta" href="/stel-een-vraag/">Stel een vraag</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"
+            ><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          /></svg>
+        </button>
+      </div>
+      <nav class="mobile-nav wrap" id="mobile-nav" aria-label="Mobiel menu">
+        <a href="/">Home</a>
+      <a href="/klussen/">Klussen</a>
+      <a href="/reviews/">Doe het zelf</a>
+      <a href="/bouwwinkel/">Bouwwinkel</a>
+      <a href="/blog/">Blog</a>
+      <a href="/vragen/">Vragen</a>
+      <a href="/over-ons/">Over ons</a>
+        <a href="/stel-een-vraag/">Stel een vraag</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <div class="footer-about">
+            <a class="brand" href="/" aria-label={"HelpIkBenGeenKlusser"}>
+              <img src="/logo.svg" alt={"HelpIkBenGeenKlusser"} width="197" height="36" />
+            </a>
+            <p>Op HelpIkBenGeenKlusser.nl kun je altijd terecht met al je klusvragen. Of je nu midden in een verbouwing zit of in een verhuizing — onze experts staan dag en nacht voor je klaar.</p>
+          </div>
+          <div class="footer-cols">
+      <div>
+        <h4>Gereedschap</h4>
+        <ul>
+          <li><a href="/beste-accuboormachine/">Accuboormachine</a></li>
+          <li><a href="/beste-cirkelzaag/">Cirkelzaag</a></li>
+          <li><a href="/beste-invalzaag/">Invalzaag</a></li>
+          <li><a href="/beste-schuurmachine/">Schuurmachine</a></li>
+          <li><a href="/beste-boorhamer/">Boorhamer</a></li>
+          <li><a href="/beste-gereedschapset/">Gereedschapset</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categorieën</h4>
+        <ul>
+          <li><a href="/frezen-en-zagen/">Frezen en zagen</a></li>
+          <li><a href="/schuren-en-slijpen/">Schuren en slijpen</a></li>
+          <li><a href="/boormachines-en-hamers/">Boormachines en hamers</a></li>
+          <li><a href="/meten-en-waterpassen/">Meten en waterpassen</a></li>
+          <li><a href="/veiligheid/">Veiligheid</a></li>
+          <li><a href="/lassen-en-solderen/">Lassen en solderen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Bouwwinkels</h4>
+        <ul>
+          <li><a href="/bouwwinkel/">Bouwwinkel</a></li>
+          <li><a href="/bauhaus/">BAUHAUS</a></li>
+          <li><a href="/bouwmaat/">Bouwmaat</a></li>
+          <li><a href="/de-bouwwinkel/">De Bouwwinkel</a></li>
+          <li><a href="/partners/">Partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/vragen/">Vragen</a></li>
+          <li><a href="/stel-een-vraag/">Stel een vraag</a></li>
+          <li><a href="/over-ons/">Over ons</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/sitemap/">Sitemap</a></li>
+        </ul>
+      </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 HelpIkBenGeenKlusser &middot; helpikbengeenklusser.nl</p>
+          <p>Als partner verdienen wij aan in aanmerking komende aankopen.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const t = document.querySelector(".menu-toggle");
+      const n = document.getElementById("mobile-nav");
+      t?.addEventListener("click", () => {
+        const open = n?.classList.toggle("open");
+        t.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    </script>
+  </body>
+</html>

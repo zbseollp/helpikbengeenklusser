@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "";
+const faq = [];
+---
+<PageLayout
+  title={"Bekijk je profiel - Helpikbengeenklusser.nl"}
+  description={"Heb je een account op onze website. Neem dan hier een kijkje op je profiel en vind makkelijk alle vragen waar je naar hebt gezocht."}
+  h1={"Bekijk je profiel - Helpikbengeenklusser.nl"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

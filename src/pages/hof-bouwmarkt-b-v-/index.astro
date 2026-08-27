@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">Hof Bouwmarkt B.V.</span></div><dl class=\"store-facts\"><div><dt>Adres</dt><dd>Weerdijk 7</dd></div><div><dt>Telefoon</dt><dd><a href=\"tel:+31561745041\">+31 561 745 041</a></dd></div></dl></div>\n<p>Hof Bouwmarkt B.V. is een Bouwmarkt gelegen aan Weerdijk 7 in Oldemarkt.</p>\n<h3 id=\"meer-informatie-over-hof-bouwmarkt-b-v-in-oldemarkt\">Meer informatie over Hof Bouwmarkt B.V. in Oldemarkt</h3>\n<p>Hof Bouwmarkt B.V. is een Bouwmarkt gelegen in Oldemarkt op Weerdijk 7.</p>\n<p>Hof Bouwmarkt B.V. in Oldemarkt is een grote Bouwmarkt met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een Bouwmarkt in de buurt van Oldemarkt? Dan ben je bij Hof Bouwmarkt B.V. op de juiste plek. Bij Hof Bouwmarkt B.V. kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met Hof Bouwmarkt B.V.door ze telefonisch te bereiken op: 31 561 745 041 of bekijk de website door op de link hieronder te klikken.</p>\n<p>Wil je graag een prettige Bouwmarkt? Kom vandaag nog langs bij Hof Bouwmarkt B.V..</p>\n<p>Hoe kom je bij Hof Bouwmarkt B.V.? Open direct de <a href=\"https://www.google.com/maps/place/Hof+Bouwmarkt+B.V./@52.8229476,5.9671286,17z/data=!3m1!4b1!4m6!3m5!1s0x47c86690f9e2a9bd:0x53a644ef0cdaf44b!8m2!3d52.8229476!4d5.9671286!16s%2Fg%2F11cn3v505w?hl=nl\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je Hof Bouwmarkt B.V. het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<ol><li><a href=\"/bouwwinkel/\">Bouwwinkel</a></li><li>Hof Bouwmarkt B.V.</li></ol>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>\n<ul><li><a href=\"/bouwmaat-schiedam-xl/\">Bouwmaat Schiedam XL</a></li><li><a href=\"/bouwmarkt-van-der-made-middelharnis/\">Bouwmarkt van der Made Middelharnis</a></li><li><a href=\"/bouwshopathome-nl/\">Bouwshopathome.nl</a></li><li><a href=\"/eikenhoutshop-nl/\">EikenhoutShop.nl</a></li><li><a href=\"/grottendieck-naaldwijk/\">Grottendieck Naaldwijk</a></li><li><a href=\"/hamminga-bouw-en-tuinmarkt-bv/\">Hamminga Bouw- En Tuinmarkt BV</a></li><li><a href=\"/hubo-bouwmarkt-oldenzaal/\">Hubo bouwmarkt Oldenzaal</a></li><li><a href=\"/karwei-bouwmarkt-assen/\">Karwei bouwmarkt Assen</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"Hof Bouwmarkt B.V. | Bouwmarkt in Oldemarkt"}
+  description={"Op zoek naar een bouwwinkel? Hof Bouwmarkt B.V. is een grote bouwwinkel in Oldemarkt. Hof Bouwmarkt B.V. voor al je spullen die jij nodig hebt voor de verbouwing!"}
+  h1={"Hof Bouwmarkt B.V."}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

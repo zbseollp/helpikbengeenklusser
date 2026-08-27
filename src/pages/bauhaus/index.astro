@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">BAUHAUS</span></div><dl class=\"store-facts\"><div><dt>Adres</dt><dd>Het Plein 10</dd></div><div><dt>Telefoon</dt><dd><a href=\"tel:+31742033400\">+31 74 203 3400</a></dd></div><div><dt>Website</dt><dd><a href=\"https://nl.bauhaus/\" target=\"_blank\" rel=\"nofollow noopener\">nl.bauhaus</a></dd></div></dl></div>\n<p>BAUHAUS is een Bouwmarkt gelegen aan Het Plein 10 in Hengelo.</p>\n<h3 id=\"meer-informatie-over-bauhaus-in-hengelo\">Meer informatie over BAUHAUS in Hengelo</h3>\n<p>BAUHAUS is een Bouwmarkt gelegen in Hengelo op Het Plein 10.</p>\n<p>BAUHAUS in Hengelo is een grote Bouwmarkt met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een Bouwmarkt in de buurt van Hengelo? Dan ben je bij BAUHAUS op de juiste plek. Bij BAUHAUS kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met BAUHAUSdoor ze telefonisch te bereiken op: 31 74 203 3400 of bekijk de website door op de link hieronder te klikken.</p>\n<p><a href=\"https://nl.bauhaus/\" target=\"_blank\" rel=\"nofollow noopener\">https://nl.bauhaus/</a></p>\n<p>Wil je graag een prettige Bouwmarkt? Kom vandaag nog langs bij BAUHAUS.</p>\n<p>Hoe kom je bij BAUHAUS? Open direct de <a href=\"https://www.google.com/maps/place/BAUHAUS/@52.2867838,6.7612981,17z/data=!3m1!4b1!4m6!3m5!1s0x47b80e48f7390e83:0xc4a3727f77251717!8m2!3d52.2867838!4d6.7612981!16s%2Fg%2F11c0rqr89r?hl=nl\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je BAUHAUS het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<ol><li><a href=\"/bouwwinkel/\">Bouwwinkel</a></li><li>BAUHAUS</li></ol>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>\n<ul><li><a href=\"/bouwcenter-koolschijn/\">Bouwcenter Koolschijn</a></li><li><a href=\"/jansen-super-keukens-bv/\">Jansen Super Keukens BV</a></li><li><a href=\"/karwei-bouwmarkt-hoorn/\">Karwei bouwmarkt Hoorn</a></li><li><a href=\"/muyrers-wijnen-bouwmaterialen-b-v-/\">Muyrers &amp; Wijnen Bouwmaterialen B.V.</a></li><li><a href=\"/praxis-bouwmarkt-kampen/\">Praxis Bouwmarkt Kampen</a></li><li><a href=\"/toolstation-amsterdam-sloterdijk/\">Toolstation Amsterdam Sloterdijk</a></li><li><a href=\"/toolstation-hengelo/\">Toolstation Hengelo</a></li><li><a href=\"/v-o-f-hulshoff/\">V.O.F. Hulshoff</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"BAUHAUS | Bouwmarkt in Hengelo"}
+  description={"Op zoek naar een bouwwinkel? BAUHAUS is een grote bouwwinkel in Hengelo. BAUHAUS voor al je spullen die jij nodig hebt voor de verbouwing!"}
+  h1={"BAUHAUS"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

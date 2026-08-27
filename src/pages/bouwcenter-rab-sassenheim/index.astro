@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">Bouwcenter Rab Sassenheim</span></div><dl class=\"store-facts\"><div><dt>Adres</dt><dd>Jagtlust, Anton Philipsweg 3</dd></div></dl></div>\n<p>Bouwcenter Rab Sassenheim is een Bouwmarkt gelegen aan Jagtlust, Anton Philipsweg 3 in Sassenheim.</p>\n<h3 id=\"meer-informatie-over-bouwcenter-rab-sassenheim-in-sassenheim\">Meer informatie over Bouwcenter Rab Sassenheim in Sassenheim</h3>\n<p>Bouwcenter Rab Sassenheim is een Bouwmarkt gelegen in Sassenheim op Jagtlust, Anton Philipsweg 3.</p>\n<p>Bouwcenter Rab Sassenheim in Sassenheim is een grote Bouwmarkt met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een Bouwmarkt in de buurt van Sassenheim? Dan ben je bij Bouwcenter Rab Sassenheim op de juiste plek. Bij Bouwcenter Rab Sassenheim kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met Bouwcenter Rab Sassenheimdoor ze telefonisch te bereiken op: of bekijk de website door op de link hieronder te klikken.</p>\n<p>Wil je graag een prettige Bouwmarkt? Kom vandaag nog langs bij Bouwcenter Rab Sassenheim.</p>\n<p>Hoe kom je bij Bouwcenter Rab Sassenheim? Open direct de <a href=\"https://www.google.com/maps/place/Bouwcenter+Rab+Sassenheim/@52.2159672,4.5094133,17z/data=!3m1!4b1!4m6!3m5!1s0x47c5c168d90e4113:0x5674a9259ef2e71b!8m2!3d52.2159672!4d4.5094133!16s%2Fg%2F11j00rtz8_?hl=nl\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je Bouwcenter Rab Sassenheim het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<ol><li><a href=\"/bouwwinkel/\">Bouwwinkel</a></li><li>Bouwcenter Rab Sassenheim</li></ol>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>\n<ul><li><a href=\"/bouwcenter-de-haze/\">Bouwcenter de Haze</a></li><li><a href=\"/bouwmaat-helmond/\">Bouwmaat Helmond</a></li><li><a href=\"/bouwmarkt-baarn/\">Bouwmarkt Baarn</a></li><li><a href=\"/bouwmarkt-gebr-toonders-b-v-/\">Bouwmarkt Gebr. Toonders B.V.</a></li><li><a href=\"/gamma-bouwmarkt-dekkershoek-den-haag/\">GAMMA bouwmarkt Dekkershoek, Den Haag</a></li><li><a href=\"/gamma-bouwmarkt-ijsselstein/\">GAMMA bouwmarkt IJsselstein</a></li><li><a href=\"/karwei-bouwmarkt-vught/\">Karwei bouwmarkt Vught</a></li><li><a href=\"/stiho-bouwplein-beverwijk/\">Stiho-bouwplein Beverwijk</a></li></ul>";
+const faq = [];
+---
+<PageLayout
+  title={"Bouwcenter Rab Sassenheim | Bouwmarkt in Sassenheim"}
+  description={"Op zoek naar een bouwwinkel? Bouwcenter Rab Sassenheim is een grote bouwwinkel in Sassenheim. Bouwcenter Rab Sassenheim voor al je spullen die jij nodig hebt voor de verbouwing!"}
+  h1={"Bouwcenter Rab Sassenheim"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>

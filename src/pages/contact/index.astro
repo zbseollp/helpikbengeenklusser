@@ -1,0 +1,14 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+const html = "<p>Wil je in contact komen met ons team? Dan kun je dat doen door onderstaand formulier in te vullen. Ook kun je ons volgen op een van onze socialmediaplatforms.</p>\n<p>Your name</p>\n<p>Your email address</p>\n<p>Message</p>\n<img src=\"/img/59f743106c59e045.png\" alt=\"\" loading=\"lazy\" />";
+const faq = [];
+---
+<PageLayout
+  title={"Contact - helpikbengeenklusser"}
+  description={"Contact Wil je in contact komen met ons team? Dan kun je dat doen door onderstaand formulier in te vullen. Ook kun je ons volgen op een van onze socialmediaplatforms. Facebook Instagram Twitter Youtube Your name Your email address Message"}
+  h1={"Contact"}
+  faq={faq}
+  crumb={[{ label: "Home", href: "/" }]}
+>
+  <Fragment set:html={html} />
+</PageLayout>
