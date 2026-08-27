@@ -1,6 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-const html = "<h4 id=\"login\">Login</h4>\n<p>Sit morbi orci, semper non mi nascetur nisl magna suspendisse.</p>\n<p>Forgot password?</p>\n<h3 id=\"verifieer-je-e-mail\">Verifieer je e-mail</h3>\n<p>We hebben een 6-cijferige verificatiecode naar je e-mail verzonden. Voer deze hieronder in om verder te gaan.</p>\n<h3 id=\"verifieer-je-e-mail\">Verifieer je e-mail</h3>\n<p>We hebben een 6-cijferige verificatiecode naar je e-mail verzonden. Voer deze hieronder in om verder te gaan.</p>\n<h3 id=\"faqs\">FAQs</h3>\n<p>Dui euismod amet lectus tristique nam. Non pretium est augue neque cursus aliquet.</p>\n<p>Dui euismod amet lectus tristique nam. Non pretium est augue neque cursus aliquet.</p>\n<p>Dui euismod amet lectus tristique nam. Non pretium est augue neque cursus aliquet.</p>\n<p>Dui euismod amet lectus tristique nam. Non pretium est augue neque cursus aliquet.</p>\n<p>Dui euismod amet lectus tristique nam. Non pretium est augue neque cursus aliquet.</p>\n<h2 id=\"most-recent-questions\">Most Recent Questions</h2>";
+const segments = [["prose", "<h4 id=\"login\">Login</h4>\n<p>Sit morbi orci, semper non mi nascetur nisl magna suspendisse.</p>\n<p>Forgot password?</p>\n<h3 id=\"verifieer-je-e-mail\">Verifieer je e-mail</h3>\n<p>We hebben een 6-cijferige verificatiecode naar je e-mail verzonden. Voer deze hieronder in om verder te gaan.</p>\n<h3 id=\"verifieer-je-e-mail\">Verifieer je e-mail</h3>\n<p>We hebben een 6-cijferige verificatiecode naar je e-mail verzonden. Voer deze hieronder in om verder te gaan.</p>\n<h3 id=\"faqs\">FAQs</h3>\n<p>Dui euismod amet lectus tristique nam. Non pretium est augue neque cursus aliquet.</p>\n<p>Dui euismod amet lectus tristique nam. Non pretium est augue neque cursus aliquet.</p>\n<p>Dui euismod amet lectus tristique nam. Non pretium est augue neque cursus aliquet.</p>\n<p>Dui euismod amet lectus tristique nam. Non pretium est augue neque cursus aliquet.</p>\n<p>Dui euismod amet lectus tristique nam. Non pretium est augue neque cursus aliquet.</p>\n<h2 id=\"most-recent-questions\">Most Recent Questions</h2>"]];
 const faq = [];
 ---
 <PageLayout
@@ -11,5 +11,7 @@ const faq = [];
   faq={faq}
   crumb={[{ label: "Home", href: "/" }]}
 >
-  <Fragment set:html={html} />
+  {segments.map((s) => (
+    <div class={s[0] === "prose" ? "prose" : "seg-full"} set:html={s[1]} />
+  ))}
 </PageLayout>

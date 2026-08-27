@@ -1,6 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-const html = "<p>In de categorie cement en lijm vind je alle handige accessoires wanneer je bezig bent met cement of met lijm. Denk aan een accu tacker, een betonmixer, een betonmolen, een houtlijm, een lijmpistool, een plakspaan en nog veel meer. Bezichtig al onze uitgebreide reviews over de artikelen onder categorie cement en lijm.</p>\n<ul><li><a href=\"/beste-behangafstomer/\">Beste behangafstomer</a></li><li><a href=\"/beste-cementsluier/\">Beste cementsluier</a></li><li><a href=\"/beste-hoektroffel/\">Beste hoektroffel</a></li><li><a href=\"/beste-multitool/\">Beste multitool</a></li><li><a href=\"/beste-pneumatische-tacker/\">Beste pneumatische tacker</a></li></ul>";
+const segments = [["prose", "<p>In de categorie cement en lijm vind je alle handige accessoires wanneer je bezig bent met cement of met lijm. Denk aan een accu tacker, een betonmixer, een betonmolen, een houtlijm, een lijmpistool, een plakspaan en nog veel meer. Bezichtig al onze uitgebreide reviews over de artikelen onder categorie cement en lijm.</p>\n<ul><li><a href=\"/beste-behangafstomer/\">Beste behangafstomer</a></li><li><a href=\"/beste-cementsluier/\">Beste cementsluier</a></li><li><a href=\"/beste-hoektroffel/\">Beste hoektroffel</a></li><li><a href=\"/beste-multitool/\">Beste multitool</a></li><li><a href=\"/beste-pneumatische-tacker/\">Beste pneumatische tacker</a></li></ul>"]];
 const faq = [];
 ---
 <PageLayout
@@ -11,5 +11,7 @@ const faq = [];
   faq={faq}
   crumb={[{ label: "Home", href: "/" }]}
 >
-  <Fragment set:html={html} />
+  {segments.map((s) => (
+    <div class={s[0] === "prose" ? "prose" : "seg-full"} set:html={s[1]} />
+  ))}
 </PageLayout>

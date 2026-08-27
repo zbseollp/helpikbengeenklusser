@@ -1,6 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-const html = "<p>De beste website voor al jouw klusvragen. Krijg het beste advies van echte vakmensen.</p>\n<p>Sinds 2020 helpen wij mensen met het oplossen van problemen rondom het klussen. Een team van ervaren vakmensen staat altijd voor je klaar met advies over alles dat met klussen te maken heeft. Zo kun je goed voorbereid aan de slag in je nieuwe huis, of te verbouwen huis. Het inhuren van vakmensen kan soms erg prijzig zijn, en daarom kiezen veel mensen vaak om zo veel mogelijk zelf te doen. Met onze adviezen kun je met een gerust hart zelf aan de slag gaan in je huis.</p>\n<img src=\"/img/65e9ec8d3a4be5e4.png\" alt=\"\" loading=\"lazy\" />";
+const segments = [["prose", "<p>De beste website voor al jouw klusvragen. Krijg het beste advies van echte vakmensen.</p>\n<p>Sinds 2020 helpen wij mensen met het oplossen van problemen rondom het klussen. Een team van ervaren vakmensen staat altijd voor je klaar met advies over alles dat met klussen te maken heeft. Zo kun je goed voorbereid aan de slag in je nieuwe huis, of te verbouwen huis. Het inhuren van vakmensen kan soms erg prijzig zijn, en daarom kiezen veel mensen vaak om zo veel mogelijk zelf te doen. Met onze adviezen kun je met een gerust hart zelf aan de slag gaan in je huis.</p>\n<img src=\"/img/65e9ec8d3a4be5e4.png\" alt=\"\" loading=\"lazy\" />"]];
 const faq = [];
 ---
 <PageLayout
@@ -11,5 +11,7 @@ const faq = [];
   faq={faq}
   crumb={[{ label: "Home", href: "/" }]}
 >
-  <Fragment set:html={html} />
+  {segments.map((s) => (
+    <div class={s[0] === "prose" ? "prose" : "seg-full"} set:html={s[1]} />
+  ))}
 </PageLayout>

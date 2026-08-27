@@ -29,9 +29,7 @@ const { title, description, h1, faq = [], crumb = [], noindex = false } = Astro.
   </section>
   <section class="section">
     <div class="wrap">
-      <div class="prose">
-        <slot />
-      </div>
+      <slot />
       <slot name="after" />
     </div>
   </section>

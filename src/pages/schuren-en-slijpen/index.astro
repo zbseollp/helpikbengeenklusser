@@ -1,6 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-const html = "<p>In de categorie schuren en slijpen vind je verschillende machines voor schuur- en slijpwerkzaamheden. Denk aan een excentrische schuurmachine, een multischuurmachine, een polijstmachine, een wandschuurmachine en nog veel meer. Bekijk al onze breedvoerige reviews over de machines onder categorie schuren en slijpen.</p>\n<ul><li><a href=\"/beste-excentrische-schuurmachine/\">Beste excentrische schuurmachine</a></li><li><a href=\"/beste-multischuurmachine/\">Beste multischuurmachine</a></li><li><a href=\"/beste-ronde-schuurmachine/\">Beste ronde schuurmachine</a></li><li><a href=\"/beste-roterende-schuurmachine/\">Beste roterende schuurmachine</a></li><li><a href=\"/beste-schaafmachine/\">Beste schaafmachine</a></li><li><a href=\"/beste-schuurblok/\">Beste schuurblok</a></li><li><a href=\"/beste-schuurmachine/\">Beste schuurmachine</a></li><li><a href=\"/beste-slijpmachine/\">Beste slijpmachine</a></li><li><a href=\"/beste-staalborstel/\">Beste staalborstel</a></li><li><a href=\"/beste-vlakschuurmachine/\">Beste vlakschuurmachine</a></li><li><a href=\"/beste-wandschuurmachine/\">Beste wandschuurmachine</a></li></ul>";
+const segments = [["prose", "<p>In de categorie schuren en slijpen vind je verschillende machines voor schuur- en slijpwerkzaamheden. Denk aan een excentrische schuurmachine, een multischuurmachine, een polijstmachine, een wandschuurmachine en nog veel meer. Bekijk al onze breedvoerige reviews over de machines onder categorie schuren en slijpen.</p>\n<ul><li><a href=\"/beste-excentrische-schuurmachine/\">Beste excentrische schuurmachine</a></li><li><a href=\"/beste-multischuurmachine/\">Beste multischuurmachine</a></li><li><a href=\"/beste-ronde-schuurmachine/\">Beste ronde schuurmachine</a></li><li><a href=\"/beste-roterende-schuurmachine/\">Beste roterende schuurmachine</a></li><li><a href=\"/beste-schaafmachine/\">Beste schaafmachine</a></li><li><a href=\"/beste-schuurblok/\">Beste schuurblok</a></li><li><a href=\"/beste-schuurmachine/\">Beste schuurmachine</a></li><li><a href=\"/beste-slijpmachine/\">Beste slijpmachine</a></li><li><a href=\"/beste-staalborstel/\">Beste staalborstel</a></li><li><a href=\"/beste-vlakschuurmachine/\">Beste vlakschuurmachine</a></li><li><a href=\"/beste-wandschuurmachine/\">Beste wandschuurmachine</a></li></ul>"]];
 const faq = [];
 ---
 <PageLayout
@@ -11,5 +11,7 @@ const faq = [];
   faq={faq}
   crumb={[{ label: "Home", href: "/" }]}
 >
-  <Fragment set:html={html} />
+  {segments.map((s) => (
+    <div class={s[0] === "prose" ? "prose" : "seg-full"} set:html={s[1]} />
+  ))}
 </PageLayout>

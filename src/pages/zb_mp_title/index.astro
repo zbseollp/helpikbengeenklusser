@@ -1,6 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-const html = "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">in</span></div></div>\n<p>is een gelegen aan in.</p>\n<h3 id=\"meer-informatie-over-in\">Meer informatie over in</h3>\n<p>is een gelegen in op.</p>\n<p>in is een grote met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een in de buurt van? Dan ben je bij op de juiste plek. Bij kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met door ze telefonisch te bereiken op: of bekijk de website door op de link hieronder te klikken.</p>\n<p>[]()</p>\n<p>Wil je graag een prettige? Kom vandaag nog langs bij.</p>\n<p>Hoe kom je bij? Open direct de <a href=\"http://\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>";
+const segments = [["prose", "<div class=\"store-card\"><div class=\"store-mark\"><span class=\"wordmark\">in</span></div></div>\n<p>is een gelegen aan in.</p>\n<h3 id=\"meer-informatie-over-in\">Meer informatie over in</h3>\n<p>is een gelegen in op.</p>\n<p>in is een grote met een grote voorraad in het magazijn, zodat ze altijd alles in huis hebben.</p>\n<p>Ben jij opzoek naar een in de buurt van? Dan ben je bij op de juiste plek. Bij kan je altijd terecht voor schroefjes, hout, een cirkelzaag en noem zo maar op.</p>\n<p>Je kan contact opnemen met door ze telefonisch te bereiken op: of bekijk de website door op de link hieronder te klikken.</p>\n<p>[]()</p>\n<p>Wil je graag een prettige? Kom vandaag nog langs bij.</p>\n<p>Hoe kom je bij? Open direct de <a href=\"http://\" target=\"_blank\" rel=\"nofollow noopener\">routebeschrijving</a>. Zo zie je direct hoe je het makkelijkste kan bereiken met de auto, fiets of het openbaar vervoer.</p>\n<h4 id=\"bezoekers-bekeken-ook\">Bezoekers bekeken ook</h4>"]];
 const faq = [];
 ---
 <PageLayout
@@ -11,5 +11,7 @@ const faq = [];
   faq={faq}
   crumb={[{ label: "Home", href: "/" }]}
 >
-  <Fragment set:html={html} />
+  {segments.map((s) => (
+    <div class={s[0] === "prose" ? "prose" : "seg-full"} set:html={s[1]} />
+  ))}
 </PageLayout>

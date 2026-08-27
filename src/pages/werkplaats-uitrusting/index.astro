@@ -1,6 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-const html = "<p>In de categorie werkplaats uitrusting vind je alle handige spullen die noodzakelijk zijn op een werkplaats. Denk aan een aggregaat, een bouwkuip, een hete lucht pistool, een platenlift en nog veel meer. Bezichtig al onze breedvoerige reviews over de producten onder de categorie werkplaats uitrusting.</p>\n<ul><li><a href=\"/beste-bouwkuip/\">Beste bouwkuip</a></li><li><a href=\"/beste-bouwstofzuiger/\">Beste bouwstofzuiger</a></li><li><a href=\"/beste-hete-lucht-kanon/\">Beste hete lucht kanon</a></li><li><a href=\"/beste-hetelucht-pistool/\">Beste hetelucht pistool</a></li><li><a href=\"/beste-industriele-weegschaal/\">Beste industriele weegschaal</a></li><li><a href=\"/beste-uitschuifbare-ladder/\">Beste uitschuifbare ladder</a></li></ul>";
+const segments = [["prose", "<p>In de categorie werkplaats uitrusting vind je alle handige spullen die noodzakelijk zijn op een werkplaats. Denk aan een aggregaat, een bouwkuip, een hete lucht pistool, een platenlift en nog veel meer. Bezichtig al onze breedvoerige reviews over de producten onder de categorie werkplaats uitrusting.</p>\n<ul><li><a href=\"/beste-bouwkuip/\">Beste bouwkuip</a></li><li><a href=\"/beste-bouwstofzuiger/\">Beste bouwstofzuiger</a></li><li><a href=\"/beste-hete-lucht-kanon/\">Beste hete lucht kanon</a></li><li><a href=\"/beste-hetelucht-pistool/\">Beste hetelucht pistool</a></li><li><a href=\"/beste-industriele-weegschaal/\">Beste industriele weegschaal</a></li><li><a href=\"/beste-uitschuifbare-ladder/\">Beste uitschuifbare ladder</a></li></ul>"]];
 const faq = [];
 ---
 <PageLayout
@@ -11,5 +11,7 @@ const faq = [];
   faq={faq}
   crumb={[{ label: "Home", href: "/" }]}
 >
-  <Fragment set:html={html} />
+  {segments.map((s) => (
+    <div class={s[0] === "prose" ? "prose" : "seg-full"} set:html={s[1]} />
+  ))}
 </PageLayout>

@@ -1,6 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-const html = "<p>In de categorie sleutels vind je allerlei sleutels voor het gemakkelijk los- of vastmaken van bouten, moeren, schroeven. Denk aan een dopsleutel, een inbussleutel, een momentsleutel, een ringsteeksleutel en nog veel meer. Neem een kijkje bij al onze uitgebreide recensies over de items onder categorie sleutels.</p>\n<ul><li><a href=\"/beste-dopsleutel/\">Beste dopsleutel</a></li><li><a href=\"/beste-haaksleutel/\">Beste haaksleutel</a></li><li><a href=\"/beste-inbussleutel/\">Beste inbussleutel</a></li><li><a href=\"/beste-lockmachine/\">Beste lockmachine</a></li><li><a href=\"/beste-momensleutel/\">Beste momensleutel</a></li><li><a href=\"/beste-momentsleutel/\">Beste momentsleutel</a></li><li><a href=\"/beste-pijpsleutel/\">Beste pijpsleutel</a></li><li><a href=\"/beste-ringsleutel/\">Beste ringsleutel</a></li><li><a href=\"/beste-ringsteeksleutel/\">Beste ringsteeksleutel</a></li><li><a href=\"/beste-slagmoersleutel/\">Beste slagmoersleutel</a></li><li><a href=\"/beste-sleutelset/\">Beste sleutelset</a></li><li><a href=\"/beste-steeksleutel/\">Beste steeksleutel</a></li><li><a href=\"/beste-steekwagen/\">Beste steekwagen</a></li><li><a href=\"/beste-t-sleutel/\">Beste t sleutel</a></li></ul>";
+const segments = [["prose", "<p>In de categorie sleutels vind je allerlei sleutels voor het gemakkelijk los- of vastmaken van bouten, moeren, schroeven. Denk aan een dopsleutel, een inbussleutel, een momentsleutel, een ringsteeksleutel en nog veel meer. Neem een kijkje bij al onze uitgebreide recensies over de items onder categorie sleutels.</p>\n<ul><li><a href=\"/beste-dopsleutel/\">Beste dopsleutel</a></li><li><a href=\"/beste-haaksleutel/\">Beste haaksleutel</a></li><li><a href=\"/beste-inbussleutel/\">Beste inbussleutel</a></li><li><a href=\"/beste-lockmachine/\">Beste lockmachine</a></li><li><a href=\"/beste-momensleutel/\">Beste momensleutel</a></li><li><a href=\"/beste-momentsleutel/\">Beste momentsleutel</a></li><li><a href=\"/beste-pijpsleutel/\">Beste pijpsleutel</a></li><li><a href=\"/beste-ringsleutel/\">Beste ringsleutel</a></li><li><a href=\"/beste-ringsteeksleutel/\">Beste ringsteeksleutel</a></li><li><a href=\"/beste-slagmoersleutel/\">Beste slagmoersleutel</a></li><li><a href=\"/beste-sleutelset/\">Beste sleutelset</a></li><li><a href=\"/beste-steeksleutel/\">Beste steeksleutel</a></li><li><a href=\"/beste-steekwagen/\">Beste steekwagen</a></li><li><a href=\"/beste-t-sleutel/\">Beste t sleutel</a></li></ul>"]];
 const faq = [];
 ---
 <PageLayout
@@ -11,5 +11,7 @@ const faq = [];
   faq={faq}
   crumb={[{ label: "Home", href: "/" }]}
 >
-  <Fragment set:html={html} />
+  {segments.map((s) => (
+    <div class={s[0] === "prose" ? "prose" : "seg-full"} set:html={s[1]} />
+  ))}
 </PageLayout>
