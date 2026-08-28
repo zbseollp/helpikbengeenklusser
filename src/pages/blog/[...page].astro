@@ -1,0 +1,112 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+  return paginate(posts, { pageSize: 16 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+
+const title =
+  page.currentPage === 1
+    ? "Blog - helpikbengeenklusser"
+    : `Blog - pagina ${page.currentPage} van ${page.lastPage} - helpikbengeenklusser`;
+const description =
+  page.currentPage === 1
+    ? "Blog"
+    : `Blog, pagina ${page.currentPage} van ${page.lastPage}`;
+
+// window of numbered links around the current page
+const span = 2;
+let from = Math.max(1, page.currentPage - span);
+let to = Math.min(page.lastPage, page.currentPage + span);
+if (to - from < span * 2) {
+  from = Math.max(1, to - span * 2);
+  to = Math.min(page.lastPage, from + span * 2);
+}
+const numbers = Array.from({ length: to - from + 1 }, (_, i) => from + i);
+const href = (n: number) => (n === 1 ? "/blog/" : `/blog/${n}/`);
+---
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    {page.url.prev && <link rel="prev" href={new URL(page.url.prev, Astro.site).href} />}
+    {page.url.next && <link rel="next" href={new URL(page.url.next, Astro.site).href} />}
+  </Fragment>
+  <section class="hero">
+    <div class="wrap">
+      <p class="crumb"><a href="/">Home</a>{page.currentPage > 1 && <><span>/</span><a href="/blog/">Blog</a></>}</p>
+      <h1>{"Blog"}</h1>
+      <p>{page.currentPage === 1 ? "Blog" : `Pagina ${page.currentPage} van ${page.lastPage}`}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="grid">
+        {page.data.map((post) => (
+          <a class="card" href={`/${post.id}/`}>
+            <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>
+              {post.data.pubDate.toLocaleDateString("nl-NL", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+            </time>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+          </a>
+        ))}
+      </div>
+
+      {page.lastPage > 1 && (
+        <nav class="pagination" aria-label="Paginering">
+          {page.url.prev ? (
+            <a class="page-link page-arrow" href={page.url.prev} rel="prev">
+              <span aria-hidden="true">&laquo;</span> Vorige
+            </a>
+          ) : (
+            <span class="page-link page-arrow is-disabled" aria-hidden="true"><span>&laquo;</span> Vorige</span>
+          )}
+
+          {from > 1 && (
+            <>
+              <a class="page-link" href={href(1)}>1</a>
+              {from > 2 && <span class="page-gap" aria-hidden="true">&hellip;</span>}
+            </>
+          )}
+
+          {numbers.map((n) =>
+            n === page.currentPage ? (
+              <span class="page-link is-current" aria-current="page">
+                <span class="sr-only">Pagina </span>{n}
+              </span>
+            ) : (
+              <a class="page-link" href={href(n)}>
+                <span class="sr-only">Pagina </span>{n}
+              </a>
+            )
+          )}
+
+          {to < page.lastPage && (
+            <>
+              {to < page.lastPage - 1 && <span class="page-gap" aria-hidden="true">&hellip;</span>}
+              <a class="page-link" href={href(page.lastPage)}>{page.lastPage}</a>
+            </>
+          )}
+
+          {page.url.next ? (
+            <a class="page-link page-arrow" href={page.url.next} rel="next">
+              Volgende <span aria-hidden="true">&raquo;</span>
+            </a>
+          ) : (
+            <span class="page-link page-arrow is-disabled" aria-hidden="true">Volgende <span>&raquo;</span></span>
+          )}
+        </nav>
+      )}
+    </div>
+  </section>
+</BaseLayout>

@@ -7,10 +7,11 @@ export interface Props {
   faq?: { q: string; a: string }[];
   crumb?: { label: string; href: string }[];
   noindex?: boolean;
+  captcha?: boolean;
 }
-const { title, description, h1, faq = [], crumb = [], noindex = false } = Astro.props;
+const { title, description, h1, faq = [], crumb = [], noindex = false, captcha = false } = Astro.props;
 ---
-<BaseLayout title={title} description={description} faq={faq} noindex={noindex}>
+<BaseLayout title={title} description={description} faq={faq} noindex={noindex} captcha={captcha}>
   <section class="hero">
     <div class="wrap">
       {crumb.length > 0 && (
