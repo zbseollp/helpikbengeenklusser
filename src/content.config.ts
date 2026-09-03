@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { imageField, draftField, statusField, stringListField } from './lib/blog-schema';
 
 const blog = defineCollection({
   loader: glob({
@@ -8,13 +9,20 @@ const blog = defineCollection({
   }),
   schema: z.object({
     title: z.string(),
-    description: z.string(),
-    pubDate: z.coerce.date(),
+    description: z.string().optional().default(''),
+    pubDate: z.coerce.date().optional(),
     updatedDate: z.coerce.date().optional(),
     author: z.string().optional(),
-    categories: z.array(z.string()).optional(),
-    tags: z.array(z.string()).optional(),
-  }),
+    categories: stringListField,
+    tags: stringListField,
+    draft: draftField,
+    _status: statusField,
+    featuredImage: imageField,
+    heroImage: imageField,
+  }).passthrough()
+    // pubDate is optional in Payload output but templates call .toISOString()
+    // on it — fall back rather than shipping undefined.
+    .transform((d) => ({ ...d, pubDate: d.pubDate ?? d.date ?? new Date() })),
 });
 
 export const collections = { blog };
